@@ -16,15 +16,15 @@ public class ProductoRepository {
         return (List<Producto>) productoCrudRepository.findAll();
     }
 
-    public List<Producto> getByCategory(int idCategory) {
+    public List<Producto> getByCategoria(int idCategory) {
         return productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategory);
     }
 
-    public Optional<List<Producto>> getScarceProducts(int quantity) {
+    public Optional<List<Producto>> getProductosExcasos(int quantity) {
         return productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
     }
 
-    public Optional<Producto> getProduct(int productId) {
+    public Optional<Producto> getProducto(int productId) {
         return productoCrudRepository.findById(productId);
     }
 
